@@ -1,5 +1,5 @@
 ---
-name: requirements-stress-review
+name: requirements-stress-review-recruiting
 description: >
   Aggressive engineer's-eye stress review for product requirements, user stories, and PRDs in an
   ATS / HRtech context (ClearCo). Use this skill whenever a PM pastes a user story, ticket, spec,
