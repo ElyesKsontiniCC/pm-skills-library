@@ -60,6 +60,7 @@ Claude will ask you five questions (about 3 minutes), then generate three domain
 | `/journey-map-creator` | Generates end-to-end journey maps for a given persona and workflow | Ready to use |
 | `/jtbd-extractor` | Extracts Jobs-to-Be-Done from research, interviews, or feature descriptions | Ready to use |
 | `/landscape-mapper` | Competitive landscape analysis and positioning map | Ready to use |
+| `/competitive-pulse` | Runs collect → classify → detect patterns → challenge assumptions → propose opportunities → prepare evidence across Aha, competitor/market research, and #Product Slack for a date range you choose (last week/month/quarter/year, or custom) | Ready to use |
 
 ---
 
