@@ -29,6 +29,11 @@ would want to ask, **state a numbered assumption and keep going**, and put the r
 
 ---
 
+> **Where this skill's files live.** Commands below use
+> `~/.claude/skills/clearco-prd-brainstorm/`. If that path does not exist — because this skill was
+> synced from your claude.ai account into a different directory — use `scripts/` and `agents/`
+> inside **this skill's own directory** instead. They are bundled with the skill either way.
+
 ## Step 0 — Resurface prior decisions, before diverging
 
 Search the PRD decision index for the area this question touches:
