@@ -49,6 +49,7 @@ Claude will ask you five questions (about 3 minutes), then generate three domain
 | `/user-story-writer-candidate` | Writes Jira tickets from the candidate perspective — Title + User Story + Gherkin ACs | Template (run `/pm-setup`) |
 | `/user-story-writer-recruiter` | Same, from the recruiter/admin perspective | Template (run `/pm-setup`) |
 | `/requirements-stress-review` | Aggressive engineer's-eye gap & blocker report on any user story, ticket, or PRD. Produces a rewritten story with tightened ACs. | Template (run `/pm-setup`) |
+| `/clearco-prd-brainstorm` | Shapes an open question *before* the PRD — resurfaces prior decisions, generates distinct approaches, grounds them in the ClearCo codebase and web research, and records the pick with its runner-up and reversal condition | Ready to use |
 | `/clearco-prd-writer` | Full PRD generation following ClearCompany's format | Ready to use |
 | `/clearco-prd-workflow` | 3-step PRD pipeline aligned to the Candy Team's ways of working — draft PRD → engineer's audit → final polished PRD | Ready to use |
 | `/ux-design-story-writer` | Writes design-focused user stories with UX-specific acceptance criteria | Ready to use |
@@ -62,6 +63,35 @@ Claude will ask you five questions (about 3 minutes), then generate three domain
 | `/jtbd-extractor` | Extracts Jobs-to-Be-Done from research, interviews, or feature descriptions | Ready to use |
 | `/landscape-mapper` | Competitive landscape analysis and positioning map | Ready to use |
 | `/competitive-pulse` | Runs collect → classify → detect patterns → challenge assumptions → propose opportunities → prepare evidence across Aha, competitor/market research, and #Product Slack for a date range you choose (last week/month/quarter/year, or custom) | Ready to use |
+
+---
+
+## PRD decision index
+
+`/clearco-prd-brainstorm` reads and writes an append-only record of product decisions at:
+
+```
+~/Documents/PM AI Agents/prd-decisions/<product-area>/<prd-slug>.md
+```
+
+Each decision carries four required parts — the decision, **why**, the **runner-up**, and
+**what would flip it**. The reversal condition is the one people skip and the one that matters
+most: a decision recorded without it quietly outlives its reasons, and nobody can tell later
+whether it still holds.
+
+Step 0 of the skill searches this corpus before generating any options, so a new PRD surfaces
+what was already decided in its area instead of silently contradicting it. The corpus starts
+empty and compounds — it is worth more with every PRD you run through the skill.
+
+Validate records with:
+
+```bash
+node ~/.claude/skills/clearco-prd-brainstorm/scripts/prd-decisions-index.mjs --check
+```
+
+Search them with `--query "<text>"`. Retrieval is **literal phrase matching** — try several
+phrasings, and read a zero-match result as "nothing matched my words", never as "nothing was
+decided here". Override the corpus location with `PRD_DECISIONS_DIR`.
 
 ---
 
