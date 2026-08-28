@@ -50,6 +50,7 @@ Claude will ask you five questions (about 3 minutes), then generate three domain
 | `/user-story-writer-recruiter` | Same, from the recruiter/admin perspective | Template (run `/pm-setup`) |
 | `/requirements-stress-review` | Aggressive engineer's-eye gap & blocker report on any user story, ticket, or PRD. Produces a rewritten story with tightened ACs. | Template (run `/pm-setup`) |
 | `/clearco-prd-writer` | Full PRD generation following ClearCompany's format | Ready to use |
+| `/clearco-prd-workflow` | 3-step PRD pipeline aligned to the Candy Team's ways of working — draft PRD → engineer's audit → final polished PRD | Ready to use |
 | `/ux-design-story-writer` | Writes design-focused user stories with UX-specific acceptance criteria | Ready to use |
 
 ### Discovery Skills
